@@ -6,5 +6,7 @@ namespace ConsumirApi.Interfaces
     {
         Task<List<Mesa>> BuscarMesas();
         Task<Mesa> BuscarMesaPorId(int id);
+
+        Task<Mesa> CriarMesa(Mesa mesa);
     }
 }

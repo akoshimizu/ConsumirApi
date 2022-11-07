@@ -1,3 +1,4 @@
+using ConsumirApi.Entidade;
 using ConsumirApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,13 @@ namespace ConsumirApi.Controllers
         {
             var mesaLocalizada = await _mesaServices.BuscarMesaPorId(id);
             return Ok(mesaLocalizada);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CriarMesa([FromBody] Mesa mesa)
+        {
+            var novaMesa = await _mesaServices.CriarMesa(mesa);
+            return Ok(novaMesa);
         }
     }
 }
