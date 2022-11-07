@@ -6,16 +6,16 @@ namespace ConsumirApi.Services
 {
     public class MesaServices : IMesaServices
     {
-        public async Task<Mesa> BuscarMesas()
+        public async Task<List<Mesa>> BuscarMesas()
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7198/");
 
-            HttpResponseMessage response = await client.GetAsync("api/Mesa/ListarMesas");
+            HttpResponseMessage response = await client.GetAsync($"api/Mesa/ListarMesas");
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            var result = JsonConvert.DeserializeObject<Mesa>(responseBody);
+            var result = JsonConvert.DeserializeObject<List<Mesa>>(responseBody);
             return result;
         }
 

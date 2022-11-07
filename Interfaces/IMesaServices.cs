@@ -4,7 +4,7 @@ namespace ConsumirApi.Interfaces
 {
     public interface IMesaServices
     {
-        Task<Mesa> BuscarMesas();
+        Task<List<Mesa>> BuscarMesas();
         Task<Mesa> BuscarMesaPorId(int id);
     }
 }
