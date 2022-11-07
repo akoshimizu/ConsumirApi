@@ -1,5 +1,7 @@
 using consumirApi.Interfaces;
 using consumirApi.Services;
+using ConsumirApi.Interfaces;
+using ConsumirApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICepService, CepServices>();
+builder.Services.AddScoped<IMesaServices, MesaServices>();
+
 
 var app = builder.Build();
 

@@ -1,8 +1,5 @@
-using consumirApi.Entidade;
 using consumirApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace consumirApi.Controllers;
 
